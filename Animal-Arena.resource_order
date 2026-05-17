@@ -6,6 +6,7 @@
     {"name":"obj_player","order":6,"path":"objects/obj_player/obj_player.yy",},
     {"name":"scr_ui_helpers","order":7,"path":"scripts/scr_ui_helpers/scr_ui_helpers.yy",},
     {"name":"scr_walking_helper","order":9,"path":"scripts/scr_walking_helper/scr_walking_helper.yy",},
+    {"name":"spr_BackFacingMegaMindDuck","order":20,"path":"sprites/spr_BackFacingMegaMindDuck/spr_BackFacingMegaMindDuck.yy",},
     {"name":"spr_bardarius_back","order":12,"path":"sprites/spr_bardarius_back/spr_bardarius_back.yy",},
     {"name":"spr_bardarius_front","order":11,"path":"sprites/spr_bardarius_front/spr_bardarius_front.yy",},
     {"name":"spr_bardarius_left","order":10,"path":"sprites/spr_bardarius_left/spr_bardarius_left.yy",},
@@ -16,5 +17,8 @@
     {"name":"spr_barthemus_left","order":14,"path":"sprites/spr_barthemus_left/spr_barthemus_left.yy",},
     {"name":"spr_barthemus_projectile","order":18,"path":"sprites/spr_barthemus_projectile/spr_barthemus_projectile.yy",},
     {"name":"spr_barthemus_right","order":15,"path":"sprites/spr_barthemus_right/spr_barthemus_right.yy",},
+    {"name":"spr_FrontFacingMegaMindDuck","order":21,"path":"sprites/spr_FrontFacingMegaMindDuck/spr_FrontFacingMegaMindDuck.yy",},
+    {"name":"spr_LeftFacingMegaMindDuck","order":22,"path":"sprites/spr_LeftFacingMegaMindDuck/spr_LeftFacingMegaMindDuck.yy",},
+    {"name":"spr_RightFacingMegaMindDuck","order":23,"path":"sprites/spr_RightFacingMegaMindDuck/spr_RightFacingMegaMindDuck.yy",},
   ],
 }
