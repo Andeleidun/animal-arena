@@ -10,7 +10,11 @@
     {"name":"spr_bardarius_front","order":11,"path":"sprites/spr_bardarius_front/spr_bardarius_front.yy",},
     {"name":"spr_bardarius_left","order":10,"path":"sprites/spr_bardarius_left/spr_bardarius_left.yy",},
     {"name":"spr_bardarius_right","order":13,"path":"sprites/spr_bardarius_right/spr_bardarius_right.yy",},
+    {"name":"spr_bardarius_weapon","order":19,"path":"sprites/spr_bardarius_weapon/spr_bardarius_weapon.yy",},
+    {"name":"spr_barthemus_back","order":17,"path":"sprites/spr_barthemus_back/spr_barthemus_back.yy",},
+    {"name":"spr_barthemus_front","order":16,"path":"sprites/spr_barthemus_front/spr_barthemus_front.yy",},
     {"name":"spr_barthemus_left","order":14,"path":"sprites/spr_barthemus_left/spr_barthemus_left.yy",},
+    {"name":"spr_barthemus_projectile","order":18,"path":"sprites/spr_barthemus_projectile/spr_barthemus_projectile.yy",},
     {"name":"spr_barthemus_right","order":15,"path":"sprites/spr_barthemus_right/spr_barthemus_right.yy",},
   ],
 }
