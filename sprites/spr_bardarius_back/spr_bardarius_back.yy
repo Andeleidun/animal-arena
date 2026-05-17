@@ -12,21 +12,21 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"81e734a3-c779-4a0a-a6fd-d15cb1364368","name":"81e734a3-c779-4a0a-a6fd-d15cb1364368","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"550c9508-189a-4576-8b47-c3034f1a567f","name":"550c9508-189a-4576-8b47-c3034f1a567f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":64,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"3e03712d-3307-41c8-bda4-0dc7033de009","blendMode":0,"displayName":"default","isLocked":false,"name":"3e03712d-3307-41c8-bda4-0dc7033de009","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"a8a059be-9133-4d0f-b71d-94b9eab97e4e","blendMode":0,"displayName":"default","isLocked":false,"name":"a8a059be-9133-4d0f-b71d-94b9eab97e4e","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_bardarius_back",
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"animalArena",
-    "path":"animalArena.yyp",
+    "name":"Animal-Arena",
+    "path":"Animal-Arena.yyp",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"81e734a3-c779-4a0a-a6fd-d15cb1364368","path":"sprites/spr_bardarius_back/spr_bardarius_back.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"62f0388b-71a3-4e34-b7f5-c62df2263c0e","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"550c9508-189a-4576-8b47-c3034f1a567f","path":"sprites/spr_bardarius_back/spr_bardarius_back.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"0c59d2f7-9fef-49af-ad19-91fa0086e86d","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
