@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_attack_helper",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_attack_helper",
+  "parent":{
+    "name":"Animal-Arena",
+    "path":"Animal-Arena.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
