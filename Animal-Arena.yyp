@@ -1,6 +1,6 @@
 {
   "$GMProject":"v1",
-  "%Name":"Blank Pixel Game",
+  "%Name":"Animal-Arena",
   "AudioGroups":[
     {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
@@ -17,13 +17,14 @@
   "MetaData":{
     "IDEVersion":"2024.14.4.222",
   },
-  "name":"Blank Pixel Game",
+  "name":"Animal-Arena",
   "resources":[
     {"id":{"name":"Font1","path":"fonts/Font1/Font1.yy",},},
     {"id":{"name":"obj_game","path":"objects/obj_game/obj_game.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"scr_ui_helpers","path":"scripts/scr_ui_helpers/scr_ui_helpers.yy",},},
+    {"id":{"name":"scr_walking_helper","path":"scripts/scr_walking_helper/scr_walking_helper.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

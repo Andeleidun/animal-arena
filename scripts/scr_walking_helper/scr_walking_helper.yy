@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_ui_helpers",
+  "%Name":"scr_walking_helper",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_ui_helpers",
+  "name":"scr_walking_helper",
   "parent":{
     "name":"Animal-Arena",
     "path":"Animal-Arena.yyp",

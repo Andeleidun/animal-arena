@@ -6,8 +6,8 @@
   "name":"obj_player",
   "overriddenProperties":[],
   "parent":{
-    "name":"Blank Pixel Game",
-    "path":"Blank Pixel Game.yyp",
+    "name":"Animal-Arena",
+    "path":"Animal-Arena.yyp",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -239,8 +239,8 @@
   "maintainGms1Font":false,
   "name":"Font1",
   "parent":{
-    "name":"Blank Pixel Game",
-    "path":"Blank Pixel Game.yyp",
+    "name":"Animal-Arena",
+    "path":"Animal-Arena.yyp",
   },
   "pointRounding":0,
   "ranges":[

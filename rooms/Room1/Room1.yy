@@ -17,8 +17,8 @@
   ],
   "name":"Room1",
   "parent":{
-    "name":"Blank Pixel Game",
-    "path":"Blank Pixel Game.yyp",
+    "name":"Animal-Arena",
+    "path":"Animal-Arena.yyp",
   },
   "parentRoom":null,
   "physicsSettings":{
