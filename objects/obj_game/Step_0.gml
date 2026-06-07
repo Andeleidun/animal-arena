@@ -18,6 +18,39 @@ if (network_type == "host" || network_type == "client")
     }
 }
 
+// LAN discovery - host broadcasts UDP beacon
+if (network_type == "host" && lobby_created)
+{
+    if (udp_socket == -1)
+        udp_socket = network_create_socket(network_socket_udp);
+
+    broadcast_timer--;
+    if (broadcast_timer <= 0)
+    {
+        broadcast_timer = 60;
+        var _buff = buffer_create(64, buffer_fixed, 1);
+        buffer_write(_buff, buffer_string, "HOST:" + host_code);
+        network_send_broadcast(udp_socket, BROADCAST_PORT, _buff, buffer_tell(_buff));
+        buffer_delete(_buff);
+    }
+}
+
+// Ensure UDP socket exists when join dropdown is open (to receive broadcasts)
+if (show_join_dropdown && udp_socket == -1)
+    udp_socket = network_create_socket(network_socket_udp);
+
+// Clean up stale discovered hosts (no beacon for 5 seconds = stale)
+for (var _i = ds_list_size(discovered_hosts) - 1; _i >= 0; _i--)
+{
+    var _entry = discovered_hosts[| _i];
+    _entry[? "timer"]--;
+    if (_entry[? "timer"] <= 0)
+    {
+        ds_map_destroy(_entry);
+        ds_list_delete(discovered_hosts, _i);
+    }
+}
+
 // Handle keyboard input for join code
 if (show_join_dropdown)
 {
@@ -41,6 +74,7 @@ if (show_join_dropdown)
 // Handle keyboard input for host code
 if (show_host_dropdown && !host_full)
 {
+    var _old_len = string_length(host_code);
     if (keyboard_check_pressed(ord("0"))) { if (string_length(host_code) < 4) host_code += "0"; }
     if (keyboard_check_pressed(ord("1"))) { if (string_length(host_code) < 4) host_code += "1"; }
     if (keyboard_check_pressed(ord("2"))) { if (string_length(host_code) < 4) host_code += "2"; }
@@ -55,7 +89,10 @@ if (show_host_dropdown && !host_full)
     {
         host_code = string_copy(host_code, 1, string_length(host_code) - 1);
     }
+    if (string_length(host_code) != _old_len) host_error = "";
 }
+
+
 
 // Close dropdowns when clicking elsewhere
 if (mouse_check_button_pressed(mb_left))

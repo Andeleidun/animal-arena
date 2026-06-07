@@ -37,6 +37,14 @@ connected_clients = 0;
 max_clients = 2;
 host_full = false;
 
+// LAN discovery (UDP broadcast)
+udp_socket = -1;
+broadcast_timer = 0;
+discovered_hosts = ds_list_create();
+join_ip = "";
+host_error = "";
+BROADCAST_PORT = 6511;
+
 // Ability system
 ability_type = "";
 ability_name = "";
