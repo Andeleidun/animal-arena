@@ -239,8 +239,8 @@
   "maintainGms1Font":false,
   "name":"Font1",
   "parent":{
-    "name":"Animal-Arena",
-    "path":"Animal-Arena.yyp",
+    "name":"Animal-Arena-Alone",
+    "path":"Animal-Arena-Alone.yyp",
   },
   "pointRounding":0,
   "ranges":[
