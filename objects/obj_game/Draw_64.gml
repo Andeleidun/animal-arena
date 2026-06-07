@@ -434,7 +434,7 @@ if screen_state == SCREEN_BATTLE
             else
             {
                 draw_set_colour(c_silver);
-                draw_text(20, 45, "Ready! Press R.");
+                draw_text(20, 45, "Ability Ready! Press RMB to use.");
             }
         }
         else
