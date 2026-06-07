@@ -18,7 +18,6 @@
     {"name":"Penguins","order":3,"path":"folders/Charcters/Penguins.yy",},
     {"name":"BasePenguin","order":1,"path":"folders/Charcters/Penguins/BasePenguin.yy",},
     {"name":"Emperor","order":2,"path":"folders/Charcters/Penguins/Emperor.yy",},
-    {"name":"Ducks","order":25,"path":"folders/Ducks.yy",},
     {"name":"Misc","order":26,"path":"folders/Misc.yy",},
     {"name":"Swing","order":5,"path":"folders/Misc/Swing.yy",},
     {"name":"Weapons","order":27,"path":"folders/Weapons.yy",},

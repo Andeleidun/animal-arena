@@ -8,7 +8,7 @@ if (network_type == "host" || network_type == "client")
         buffer_write(buffer, buffer_string, "animal:" + chosen_animal);
         if (network_type == "host" && client_socket != -1)
         {
-            network_send_packet(client_socket, buffer, buffer_tell(buffer));
+            network_send_packet(server_socket, buffer, buffer_tell(buffer));
         }
         else if (network_type == "client" && client_socket != -1)
         {
@@ -173,7 +173,7 @@ case "bardarius":
         ability_cooldown_timer--;
     }
 
-    if (keyboard_check_pressed(ord("R")))
+    if (mouse_check_button_pressed(2))
     {
         var _ability_source = instance_find(obj_player, 0);
         if (network_type == "none" && !practice_all_mode && practice_controlled_duck != noone && instance_exists(practice_controlled_duck))

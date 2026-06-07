@@ -28,7 +28,6 @@
     {"$GMFolder":"","%Name":"Penguins","folderPath":"folders/Charcters/Penguins.yy","name":"Penguins","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"BasePenguin","folderPath":"folders/Charcters/Penguins/BasePenguin.yy","name":"BasePenguin","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Emperor","folderPath":"folders/Charcters/Penguins/Emperor.yy","name":"Emperor","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Ducks","folderPath":"folders/Ducks.yy","name":"Ducks","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Misc","folderPath":"folders/Misc.yy","name":"Misc","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Swing","folderPath":"folders/Misc/Swing.yy","name":"Swing","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Weapons","folderPath":"folders/Weapons.yy","name":"Weapons","resourceType":"GMFolder","resourceVersion":"2.0",},

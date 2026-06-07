@@ -228,7 +228,7 @@ if (y > room_height) { y -= room_height; _wrapped = true; }
 
 if (_wrapped)
 {
-    var _g = instance_find(obj_game, 0);
+    _g = instance_find(obj_game, 0);
     if (_g != noone)
     {
         // Down to Earth: start window after any wrap
