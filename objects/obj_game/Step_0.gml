@@ -6,7 +6,7 @@ if (network_type == "host" || network_type == "client")
     {
         var buffer = buffer_create(256, buffer_fixed, 1);
         buffer_write(buffer, buffer_string, "animal:" + chosen_animal);
-        if (network_type == "host" && client_socket != -1)
+        if (network_type == "host" && server_socket != -1)
         {
             network_send_packet(server_socket, buffer, buffer_tell(buffer));
         }
@@ -33,6 +33,31 @@ if (network_type == "host" && lobby_created)
         network_send_broadcast(udp_socket, BROADCAST_PORT, _buff, buffer_tell(_buff));
         buffer_delete(_buff);
     }
+	var n_id = ds_map_find_value(async_load, "id");					 // get the ID of the socket receiving the data
+	if (n_id == server_socket)										 // check ID to make sure it is that of the server socket
+	{
+		var t = ds_map_find_value(async_load, "type");				 // get the type of network event
+		switch(t)
+		    {
+		    case network_type_connect:
+		        var sock = ds_map_find_value(async_load, "socket");  // get the socket ID of the connection
+		        ds_list_add(socketlist, sock);						 // then write it to a DS list for future reference
+		        break;
+		    case network_type_disconnect:
+		        sock = ds_map_find_value(async_load, "socket");
+		        ds_list_delete(socketlist, sock);
+		        break;
+		    }
+	}
+	
+	if (n_id == client_socket)
+	{
+		var t = ds_map_find_value(async_load, "type");
+		if (t == network_type_data)
+		{
+			// Data handling here...
+		}
+	}
 }
 
 // Ensure UDP socket exists when join dropdown is open (to receive broadcasts)
@@ -91,8 +116,6 @@ if (show_host_dropdown && !host_full)
     }
     if (string_length(host_code) != _old_len) host_error = "";
 }
-
-
 
 // Close dropdowns when clicking elsewhere
 if (mouse_check_button_pressed(mb_left))

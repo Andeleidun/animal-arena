@@ -125,8 +125,17 @@ if screen_state == SCREEN_CHOOSE_FIGHTER
         {
             network_type = "host";
             server_socket = network_create_server(network_socket_tcp, PORT, 2);
-            lobby_created = true;
-            show_host_dropdown = false;
+			if (server_socket < 0)
+			{
+				// Connection error! Add failsafe codes here
+		        draw_set_colour(c_red);
+		        draw_text(540, 200, "Server creation failed!");
+			}
+			else
+			{
+				lobby_created = true;
+				show_host_dropdown = false;
+			}
         }
     }
 
@@ -176,13 +185,21 @@ if screen_state == SCREEN_CHOOSE_FIGHTER
                 {
                     network_type = "client";
                     client_socket = network_create_socket(network_socket_tcp);
-                    network_connect(client_socket, _target_ip, PORT);
-
-                    var buffer = buffer_create(256, buffer_fixed, 1);
-                    buffer_write(buffer, buffer_string, "code:" + join_code);
-                    network_send_packet(client_socket, buffer, buffer_tell(buffer));
-                    buffer_delete(buffer);
-                    show_join_dropdown = false;
+                    var server = network_connect(client_socket, _target_ip, PORT);
+					if (server < 0)
+					{
+						// No connection! Add failsafe codes here
+		                draw_set_colour(c_red);
+		                draw_text(540, 200, "Server connection failed!");
+					}
+					else
+					{
+	                    var buffer = buffer_create(256, buffer_fixed, 1);
+	                    buffer_write(buffer, buffer_string, "code:" + join_code);
+	                    network_send_packet(client_socket, buffer, buffer_tell(buffer));
+	                    buffer_delete(buffer);
+	                    show_join_dropdown = false;
+					}
                 }
             }
             else
@@ -345,8 +362,8 @@ if screen_state == SCREEN_CHOOSE_FIGHTER
                 opponent_ready = false;
                 var buffer = buffer_create(256, buffer_fixed, 1);
                 buffer_write(buffer, buffer_string, "unready");
-                if (network_type == "host" && client_socket != -1)
-                    network_send_packet(client_socket, buffer, buffer_tell(buffer));
+                if (network_type == "host" && server_socket != -1)
+                    network_send_packet(server_socket, buffer, buffer_tell(buffer));
                 else if (network_type == "client" && client_socket != -1)
                     network_send_packet(client_socket, buffer, buffer_tell(buffer));
                 buffer_delete(buffer);
