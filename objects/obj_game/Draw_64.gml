@@ -91,17 +91,37 @@ if screen_state == SCREEN_CHOOSE_FIGHTER
     if (show_host_dropdown && !(network_type == "host" && lobby_created))
     {
         draw_set_colour(c_dkgray);
-        draw_rectangle(373, 142, 527, 190, false);
+        draw_rectangle(373, 142, 527, 220, false);
         draw_set_colour(c_navy);
-        draw_rectangle(375, 144, 525, 188, false);
+        draw_rectangle(375, 144, 525, 218, false);
         draw_set_colour(c_white);
         draw_text(380, 147, "Code: " + string(host_code));
 
         if (ui_small_button(380, 195, 140, 30, "Randomize"))
         {
-            host_code = string(floor(random(9000)) + 1000)
+            host_code = string(floor(random(9000)) + 1000);
+            host_error = "";
         }
-        if (string_length(host_code) == 4 && !host_full && ui_small_button(530, 195, 140, 30, "Start Host"))
+
+        // Check if another device is already hosting this code
+        var _code_taken = false;
+        for (var _i = 0; _i < ds_list_size(discovered_hosts); _i++)
+        {
+            if (discovered_hosts[| _i][? "code"] == host_code)
+            {
+                _code_taken = true;
+                break;
+            }
+        }
+
+        if (_code_taken)
+        {
+            host_error = "Code already in use on network";
+            draw_set_colour(c_red);
+            draw_text(380, 228, host_error);
+        }
+
+        if (string_length(host_code) == 4 && !host_full && !_code_taken && ui_small_button(530, 195, 140, 30, "Start Host"))
         {
             network_type = "host";
             server_socket = network_create_server(network_socket_tcp, PORT, 2);
@@ -138,16 +158,37 @@ if screen_state == SCREEN_CHOOSE_FIGHTER
 
         if (string_length(join_code) == 4)
         {
-            if (ui_small_button(540, 195, 140, 30, "Connect"))
+            // Find a host broadcasting this code
+            var _target_ip = "";
+            for (var _i = 0; _i < ds_list_size(discovered_hosts); _i++)
             {
-                network_type = "client";
-                client_socket = network_create_socket(network_socket_tcp);
-                network_connect(client_socket, "127.0.0.1", PORT);
+                var _entry = discovered_hosts[| _i];
+                if (_entry[? "code"] == join_code)
+                {
+                    _target_ip = _entry[? "ip"];
+                    break;
+                }
+            }
 
-                var buffer = buffer_create(256, buffer_fixed, 1);
-                buffer_write(buffer, buffer_string, "code:" + join_code);
-                network_send_packet(client_socket, buffer, buffer_tell(buffer));
-                buffer_delete(buffer);
+            if (_target_ip != "")
+            {
+                if (ui_small_button(540, 195, 140, 30, "Connect"))
+                {
+                    network_type = "client";
+                    client_socket = network_create_socket(network_socket_tcp);
+                    network_connect(client_socket, _target_ip, PORT);
+
+                    var buffer = buffer_create(256, buffer_fixed, 1);
+                    buffer_write(buffer, buffer_string, "code:" + join_code);
+                    network_send_packet(client_socket, buffer, buffer_tell(buffer));
+                    buffer_delete(buffer);
+                    show_join_dropdown = false;
+                }
+            }
+            else
+            {
+                draw_set_colour(c_red);
+                draw_text(540, 200, "No host found with that code");
             }
         }
     }
